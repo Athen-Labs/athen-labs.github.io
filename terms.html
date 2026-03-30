@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athen Labs | Terms</title>
+    <link rel="icon" href="athenlabs.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Terms page specific styles */
+        .terms-header {
+            padding: 120px 0 20px;
+            text-align: center;
+            background-color: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .terms-header h1 {
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+        
+        .app-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .app-category {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .app-category h3 {
+            width: 180px;
+            text-align: right;
+            margin-right: 15px;
+            color: #334155;
+            font-size: 0.95rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .app-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            flex-grow: 1;
+        }
+        
+        .app-selector button {
+            padding: 6px 12px;
+            background-color: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            color: #475569;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .app-selector button:hover {
+            background-color: #e2e8f0;
+        }
+        
+        .app-selector button.active {
+            background-color: #334155;
+            color: #f8fafc;
+            border-color: #334155;
+        }
+        
+        .terms-content {
+            padding: 40px 0 60px;
+        }
+        
+        .terms-section {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .terms-section.active {
+            display: block;
+        }
+        
+        .terms-section h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #1e293b;
+        }
+        
+        .terms-section h3 {
+            margin: 25px 0 15px;
+            color: #334155;
+        }
+        
+        .terms-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #475569;
+        }
+        
+        .terms-section ul, .terms-section ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .terms-section li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: #475569;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-to-home a {
+            color: #475569;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+        
+        .back-to-home a i {
+            margin-right: 8px;
+        }
+        
+        .back-to-home a:hover {
+            color: #334155;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Athen Labs</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#mobile-apps">Consumer Apps</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Back to Home link -->
+    <div class="back-to-home" style="margin: 20px auto; text-align: center;">
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+    <!-- Terms Header -->
+    <section class="terms-header">
+        <div class="container">
+            <h1>User Terms of Service</h1>
+            <p>Please select an application to view its terms of service</p>
+            
+            <div class="app-categories">
+                <div class="app-category">
+                    <h3>Job Search Agents</h3>
+                    <div class="app-selector">
+                        <button class="app-btn" data-app="linkedin">Quick Cover Letter (LinkedIn)</button>
+                        <button class="app-btn" data-app="indeed">Quick Cover Letter (Indeed)</button>
+                        <button class="app-btn" data-app="hirevue">Hirevue AI</button>
+                    </div>
+                </div>
+                
+                <div class="app-category">
+                    <h3>Consumer Apps</h3>
+                    <div class="app-selector">
+                        <button class="app-btn" data-app="quicknote">Quick Note AI</button>
+                        <button class="app-btn" data-app="ace">Ace My Classes</button>
+                        <button class="app-btn" data-app="photomagic">Photo Magic AI</button>
+                        <button class="app-btn" data-app="tryon">Try On AI</button>
+                        <button class="app-btn" data-app="acesat">Ace SAT</button>
+                        <button class="app-btn" data-app="faithful">Faithful</button>
+                    </div>
+                </div>
+                
+                <div class="app-category">
+                    <h3>General</h3>
+                    <div class="app-selector">
+                        <button class="app-btn active" data-app="general">General Terms</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <!-- General Terms -->
+            <div class="terms-section active" id="general-terms">
+                <h2>Athen Labs, LLC User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Introduction</h3>
+                <p>Welcome to Athen Labs, LLC. These Terms of Service ("Terms") govern your use of our website, products, and services. By accessing or using any Athen Labs application or service, you agree to be bound by these Terms.</p>
+                
+                <h3>2. Use of Services</h3>
+                <p>Our services are provided for your personal and non-commercial use, unless otherwise specified. You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products, or services obtained from our services without our prior written permission.</p>
+                
+                <h3>3. Privacy Policy</h3>
+                <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your information. By using our services, you agree to our Privacy Policy.</p>
+                
+                <h3>4. Modifications to Terms</h3>
+                <p>We reserve the right to modify these Terms at any time. We will notify you of any changes by posting the new Terms on this page. Your continued use of our services after any such changes constitutes your acceptance of the new Terms.</p>
+                
+                <h3>5. Contact Us</h3>
+                <p>If you have any questions about these Terms, please contact us at <a href="mailto:hello@athenlabs.com?subject=Terms%20Inquiry">hello@athenlabs.com</a>.</p>
+            </div>
+            
+            <!-- Quick Note AI Terms -->
+            <div class="terms-section" id="quicknote-terms">
+                <h2>Quick Note AI - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. App Description</h3>
+                <p>Quick Note AI is a mobile application that helps users capture, organize, and enhance notes using artificial intelligence. The app includes features for transcription, summarization, and note organization.</p>
+                
+                <h3>2. Mobile Platform Terms</h3>
+                <p>In addition to these terms, your use of Quick Note AI is subject to the terms of service of the platform where you downloaded the app (your app platform). Each platform may have additional requirements or restrictions.</p>
+                
+                <h3>3. Voice Recording</h3>
+                <p>Some features of Quick Note AI involve recording audio. You are responsible for obtaining consent from all parties before recording conversations, in accordance with applicable laws in your jurisdiction.</p>
+                
+                <h3>4. Data Synchronization</h3>
+                <p>Notes may be synchronized across devices using your account. While we employ encryption and security measures, you should avoid storing highly sensitive information unless you have reviewed and are satisfied with our security practices.</p>
+                
+                <h3>5. Contact Information</h3>
+                <p>For support with Quick Note AI, please contact <a href="mailto:hello@athenlabs.com?subject=Quick%20Note%20AI%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+
+            <!-- Quick Cover Letter (LinkedIn) Terms -->
+            <div class="terms-section" id="linkedin-terms">
+                <h2>Quick Cover Letter (LinkedIn) - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Extension Description</h3>
+                <p>Quick Cover Letter (LinkedIn) is a Chrome extension that helps users generate tailored cover letters for LinkedIn job applications by matching their profile with job requirements.</p>
+                
+                <h3>2. User Data</h3>
+                <p>This extension processes information from your LinkedIn profile and job listings to generate cover letters. We do not store this information permanently.</p>
+                
+                <h3>3. Usage Restrictions</h3>
+                <p>Users may not reverse engineer, decompile, or attempt to extract the source code of the extension. The extension may only be used for legitimate job application purposes.</p>
+                
+                <h3>4. Third-Party Integration</h3>
+                <p>Our extension interacts with LinkedIn's website. We are not affiliated with LinkedIn Corporation. Your use of LinkedIn is subject to LinkedIn's own terms of service.</p>
+                
+                <h3>5. Contact Information</h3>
+                <p>For questions regarding these terms, please contact us at <a href="mailto:hello@athenlabs.com?subject=Quick%20Cover%20Letter%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+
+            <!-- Quick Cover Letter (Indeed) Terms -->
+            <div class="terms-section" id="indeed-terms">
+                <h2>Quick Cover Letter (Indeed) - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Extension Description</h3>
+                <p>Quick Cover Letter (Indeed) is a Chrome extension that helps users create personalized cover letters for Indeed job listings that highlight relevant experience and skills.</p>
+                
+                <h3>2. User Data</h3>
+                <p>This extension processes information from Indeed job listings and user-provided information to generate cover letters. We respect your privacy and protect your personal information.</p>
+                
+                <h3>3. Usage Restrictions</h3>
+                <p>Users may not use the extension to submit false or misleading information in job applications. The extension is intended to assist in legitimate job seeking activities only.</p>
+                
+                <h3>4. Third-Party Integration</h3>
+                <p>Our extension interacts with Indeed's website. We are not affiliated with Indeed, Inc. Your use of Indeed is subject to Indeed's own terms of service.</p>
+                
+                <h3>5. Contact Information</h3>
+                <p>For questions regarding these terms, please contact us at <a href="mailto:hello@athenlabs.com?subject=Quick%20Cover%20Letter%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+
+            <!-- Hirevue AI Terms -->
+            <div class="terms-section" id="hirevue-terms">
+                <h2>Hirevue AI - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Service Description</h3>
+                <p>Hirevue AI is a Chrome extension that helps users practice and prepare for Hirevue video interviews with AI-powered feedback on responses and presentation.</p>
+                
+                <h3>2. Content Usage</h3>
+                <p>The feedback provided by Hirevue AI is for practice purposes only. We do not guarantee that using our service will result in successful interview outcomes.</p>
+                
+                <h3>3. Video and Audio Data</h3>
+                <p>By using Hirevue AI, you consent to the processing of your video and audio data for the purpose of providing interview feedback. This data is processed in accordance with our Privacy Policy.</p>
+                
+                <h3>4. Third-Party Integration</h3>
+                <p>Our extension interacts with Hirevue's platform. We are not affiliated with Hirevue, Inc. Your use of Hirevue is subject to Hirevue's own terms of service.</p>
+                
+                <h3>5. Contact Information</h3>
+                <p>For questions regarding these terms, please contact us at <a href="mailto:hello@athenlabs.com?subject=Hirevue%20AI%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+            
+            <!-- Photo Magic AI Terms -->
+            <div class="terms-section" id="photomagic-terms">
+                <h2>Photo Magic AI - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. App Description</h3>
+                <p>Photo Magic AI is an iOS application that uses artificial intelligence to enhance and transform your photos with advanced editing capabilities.</p>
+                
+                <h3>2. User Content</h3>
+                <p>Users retain ownership of all photos uploaded to or edited with Photo Magic AI. We do not claim any ownership rights to your content.</p>
+                
+                <h3>3. Data Processing</h3>
+                <p>Photos may be processed on our servers to apply AI enhancements. We implement appropriate security measures to protect your content during processing.</p>
+                
+                <h3>4. Platform Terms</h3>
+                <p>Your use of Photo Magic AI is also subject to the terms of service provided by your app platform. We are not affiliated with Apple Inc.</p>
+                
+                <h3>5. Contact Information</h3>
+                <p>For support with Photo Magic AI, please contact <a href="mailto:hello@athenlabs.com?subject=Photo%20Magic%20AI%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+            
+            <!-- Try On AI Terms -->
+            <div class="terms-section" id="tryon-terms">
+                <h2>Try On AI - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Service Overview</h3>
+                <p>Try On AI is a virtual clothing try-on application that uses artificial intelligence to help users visualize how clothing items would look on them before making a purchase.</p>
+                
+                <h3>2. User Images</h3>
+                <p>When you upload images of yourself to use the virtual try-on feature, we process these images solely for the purpose of providing the try-on service. We do not sell or share your images with third parties.</p>
+                
+                <h3>3. Shopping Integration</h3>
+                <p>Try On AI may integrate with third-party shopping platforms. Any purchases made through these integrations are subject to the terms and conditions of the respective retailers.</p>
+                
+                <h3>4. App Limitations</h3>
+                <p>While we strive for accuracy, Try On AI provides a simulation that may not perfectly represent how clothing will actually look or fit in person. Users should consider this when making purchasing decisions.</p>
+                
+                <h3>5. Contact Information</h3>
+                <p>For questions about Try On AI, please contact us at <a href="mailto:hello@athenlabs.com?subject=Try%20On%20AI%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+            
+            <!-- Ace My Classes Terms -->
+            <div class="terms-section" id="ace-terms">
+                <h2>Ace My Classes - Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+
+                <h3>1. About the Service</h3>
+                <ul>
+                    <li>Ace My Classes is a learning and productivity tool designed to help you organize class materials, take notes, and study effectively.</li>
+                    <li>The app uses artificial intelligence services, powered by Google's Gemini models, to provide features like transcription, summarization, and content generation.</li>
+                </ul>
+
+                <h3>2. Your Account</h3>
+                <ul>
+                    <li>You can start using the app with an anonymous account. To sync your data and unlock all features, you can link your account to Sign in with Apple.</li>
+                    <li>You are responsible for all activity that occurs under your account.</li>
+                </ul>
+
+                <h3>3. Your Content</h3>
+                <ul>
+                    <li>You own all the content you create in the app, including your notes, recordings, flashcards, and tasks ("Your Content").</li>
+                    <li>By using the app, you grant us a license to store, process, and modify Your Content solely for the purpose of providing the app's services to you. For example, we need this permission to upload your recordings for AI processing or to sync your notes across devices.</li>
+                    <li>You are responsible for Your Content. Do not upload or record anything illegal, infringing on others' rights, or for which you do not have the necessary permissions.</li>
+                </ul>
+
+                <h3>4. Use of Artificial Intelligence</h3>
+                <ul>
+                    <li>To provide features like transcription, summarization, and AI chat, Your Content (such as audio recordings and notes) is sent to and processed by Google's Generative AI models.</li>
+                    <li><strong>Disclaimer:</strong> AI-generated content can sometimes be inaccurate or incomplete. It is provided for informational and study purposes only. You should always verify critical information. We are not liable for any errors or omissions in AI-generated content.</li>
+                </ul>
+
+                <h3>5. Prohibited Use</h3>
+                <p>You agree not to misuse the service, including attempting to reverse-engineer the app, disrupt our servers, or use the service for any illegal purpose.</p>
+
+                <h3>6. Service Availability &amp; Termination</h3>
+                <ul>
+                    <li>We strive to keep the service available, but it is provided "as-is" without warranties of any kind. We are not liable for any data loss or service interruption.</li>
+                    <li>You can delete your account at any time through the Profile screen. This action is permanent and will delete all of your associated data.</li>
+                    <li>We reserve the right to suspend or terminate your account if you violate these terms.</li>
+                </ul>
+
+                <h3>7. Changes to Terms</h3>
+                <p>We may update these terms from time to time. We will notify you of any significant changes by displaying a notice within the app or by other means.</p>
+            </div>
+
+            <!-- Ace SAT Terms -->
+            <div class="terms-section" id="acesat-terms">
+                <h2>Ace SAT - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Educational Purpose</h3>
+                <p>Ace SAT is an educational application designed to help students prepare for the SAT exam through practice questions, study guides, and performance tracking.</p>
+                
+                <h3>2. Content Accuracy</h3>
+                <p>While we strive to provide accurate and up-to-date content, we do not guarantee that all information in the app is error-free or reflects the most current SAT format and questions.</p>
+                
+                <h3>3. User Accounts</h3>
+                <p>To track progress and provide personalized learning experiences, users may need to create an account. Users are responsible for maintaining the confidentiality of their account credentials.</p>
+                
+                <h3>4. Educational Results</h3>
+                <p>Use of Ace SAT does not guarantee improved performance on the actual SAT exam. Results vary based on individual effort, preparation time, and other factors.</p>
+                
+                <h3>5. Contact Information</h3>
+                <p>For support with Ace SAT, please contact <a href="mailto:hello@athenlabs.com?subject=Ace%20SAT%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Athen Labs, LLC</h2>
+                    <p>56 Broad Street, STE 14022<br>Boston, MA 02109<br>United States</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="mailto:hello@athenlabs.com?subject=Contact%20Inquiry">Contact</a></li>
+                        <li><a href="mailto:hello@athenlabs.com?subject=Career%20Inquiry">Careers</a></li>
+                        <li><a href="mailto:hello@athenlabs.com?subject=Support%20Request">Support</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="privacy/">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Athen Labs, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for tab switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const appButtons = document.querySelectorAll('.app-selector .app-btn');
+            const termsSections = document.querySelectorAll('.terms-section');
+            const defaultApp = 'general'; // Default to 'general' terms
+
+            function showTerms(appId) {
+                // Special handling for Faithful - redirect to external URL
+                if (appId === 'faithful') {
+                    window.location.href = 'https://athenlabs.com/terms/faithful';
+                    return; // Stop further processing for faithful
+                }
+
+                // Update active button
+                appButtons.forEach(button => {
+                    button.classList.remove('active');
+                    if (button.dataset.app === appId) {
+                        button.classList.add('active');
+                    }
+                });
+
+                // Hide all terms sections
+                termsSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Show selected section
+                // Ensure a valid section ID is constructed, default to general if not found
+                const sectionId = `${appId}-terms`;
+                const sectionToShow = document.getElementById(sectionId);
+                if (sectionToShow) {
+                    sectionToShow.classList.add('active');
+                } else {
+                    // Fallback to general if specific section not found
+                    document.getElementById('general-terms').classList.add('active');
+                    // Also update button for general
+                     appButtons.forEach(button => {
+                        button.classList.remove('active');
+                        if (button.dataset.app === 'general') {
+                            button.classList.add('active');
+                        }
+                    });
+                }
+            }
+
+            // Check for URL parameters on page load
+            const urlParams = new URLSearchParams(window.location.search);
+            const appFromUrl = urlParams.get('app');
+
+            if (appFromUrl === 'faithful') {
+                window.location.href = 'https://athenlabs.com/terms/faithful';
+            } else if (appFromUrl) {
+                showTerms(appFromUrl);
+            } else {
+                // No app in URL, show default (general)
+                showTerms(defaultApp);
+            }
+
+            // Add click listeners to buttons
+            appButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const appId = button.dataset.app;
+                    
+                    // Update URL without reloading for non-Faithful apps
+                    if (appId !== 'faithful') {
+                         history.pushState(null, '', `?app=${appId}`);
+                    }
+                    // Show terms (will handle redirect for Faithful)
+                    showTerms(appId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

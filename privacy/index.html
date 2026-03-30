@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athen Labs | Privacy</title>
+    <link rel="icon" href="../athenlabs.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Privacy page specific styles */
+        .privacy-header {
+            padding: 120px 0 20px;
+            text-align: center;
+            background-color: var(--color-bg-primary);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .privacy-header h1 {
+            margin-bottom: 20px;
+            color: var(--color-text-accent);
+        }
+        
+        .app-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .app-category {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+        
+        .app-category h3 {
+            width: 180px;
+            text-align: right;
+            margin-right: 15px;
+            color: var(--color-text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .app-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            flex-grow: 1;
+        }
+        
+        .app-selector button {
+            padding: 6px 12px;
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .app-selector button:hover {
+            background-color: var(--color-bg-accent);
+        }
+        
+        .app-selector button.active {
+            background-color: var(--color-button-bg);
+            color: var(--color-button-text);
+            border-color: var(--color-button-bg);
+        }
+        
+        .privacy-content {
+            padding: 40px 0 60px;
+        }
+        
+        .privacy-section {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .privacy-section.active {
+            display: block;
+        }
+        
+        .privacy-section h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text-accent);
+        }
+        
+        .privacy-section h3 {
+            margin: 25px 0 15px;
+            color: var(--color-text-primary);
+        }
+        
+        .privacy-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+        
+        .privacy-section ul, .privacy-section ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .privacy-section li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: var(--color-text-secondary);
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-to-home a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+        
+        .back-to-home a i {
+            margin-right: 8px;
+        }
+        
+        .back-to-home a:hover {
+            color: #334155;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">Athen Labs</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#mobile-apps">Consumer Apps</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Back to Home link -->
+    <div class="back-to-home" style="margin: 20px auto; text-align: center;">
+        <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+    <!-- Privacy Header -->
+    <section class="privacy-header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Please select an application to view its privacy policy</p>
+            
+            <div class="app-categories">
+                <div class="app-category">
+                    <h3>General</h3>
+                    <div class="app-selector">
+                        <button class="app-btn active" data-app="general">General Privacy Policy</button>
+                    </div>
+                </div>
+                
+
+                
+                <div class="app-category">
+                    <h3>Consumer Apps</h3>
+                    <div class="app-selector">
+                        <button class="app-btn" data-app="quicknote">Quick Note AI</button>
+                        <button class="app-btn" data-app="ace">Ace My Classes</button>
+                        <button class="app-btn" data-app="acesat">Ace SAT</button>
+                        <button class="app-btn" data-app="aceact">Ace ACT</button>
+                        <button class="app-btn" data-app="bedrot">Bedrot</button>
+                        <button class="app-btn" data-app="longr">LONGR</button>
+                        <button class="app-btn" data-app="faithful">Faithful</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Content -->
+    <section class="privacy-content">
+        <div class="container">
+            <!-- General Privacy Policy -->
+            <div class="privacy-section active" id="general-privacy">
+                <h2>Athen Labs, LLC Privacy Policy</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Introduction</h3>
+                <p>At Athen Labs, LLC, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, products, and services.</p>
+                
+                <h3>2. Information Collection</h3>
+                <p>We may collect personal information that you voluntarily provide to us when using our services, including but not limited to your name, email address, and usage data. We may also collect non-personal information about how you interact with our services.</p>
+                
+                <h3>3. Account Information</h3>
+                <p>For all our productivity and job search applications (excluding consumer apps), we collect and store account information including login credentials, name, email, and other information necessary to provide our services. This information is securely stored and processed in accordance with industry standards.</p>
+                
+                <h3>4. User Control of Account Information</h3>
+                <p>You have the ability to view, update, or delete your account information at any time through your account settings. If you delete your account, all associated personal information will be removed from our active databases, though some information may be retained for legal or legitimate business purposes.</p>
+                
+                <h3>5. Payment Processing</h3>
+                <p>Payment information for subscriptions and purchases is processed through Stripe, a secure third-party payment processor. We do not store your complete credit card information on our servers. All payment processing is conducted in accordance with PCI-DSS standards. For more information about how Stripe handles your payment data, please refer to Stripe's Privacy Policy.</p>
+                
+                <h3>6. Use of Information</h3>
+                <p>We use the information we collect to provide, maintain, and improve our services, to communicate with you, and to comply with legal obligations. We may also use anonymized data for research and analytics purposes.</p>
+                
+                <h3>7. Information Sharing</h3>
+                <p>We do not sell, rent, or trade your personal information to third parties. We may share your information with service providers who assist us in operating our business, as required by law, or with your consent.</p>
+                
+                <h3>8. Data Security</h3>
+                <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</p>
+                
+                <h3>9. Changes to Privacy Policy</h3>
+                <p>We reserve the right to modify this Privacy Policy at any time. We will notify you of any changes by posting the new Privacy Policy on this page. Your continued use of our services after any such changes constitutes your acceptance of the new Privacy Policy.</p>
+                
+                <h3>10. Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:hello@athenlabs.com?subject=Privacy%20Policy%20Inquiry">hello@athenlabs.com</a>.</p>
+            </div>
+            
+            <!-- Quick Note AI Privacy -->
+            <div class="privacy-section" id="quicknote-privacy">
+                <h2>Quick Note AI - Privacy Policy</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Audio Recording</h3>
+                <p>Quick Note AI allows you to record audio through your device's microphone for meetings, lectures, and other events. You control when to start and stop recording, and all recordings are initially stored locally on your device.</p>
+                
+                <h3>2. Transcription Processing</h3>
+                <p>When you choose to process your recordings, the audio is sent to our AI providers for transcription and analysis. These providers process the audio to generate text transcripts and may also create summaries of the content.</p>
+                
+                <h3>3. Data Storage</h3>
+                <p>Your original audio recordings are not stored on our servers. However, the transcripts generated from your recordings are processed by our AI providers, who may maintain a history of these processed files in accordance with their own privacy policies.</p>
+                
+                <h3>4. User Access and Control</h3>
+                <p>You can access your history of transcriptions through the app. You have the ability to delete notes from your device at any time. While this removes the content from your device, please be aware that processed transcripts may remain in the AI providers' systems according to their retention policies.</p>
+                
+                <h3>5. Third-Party Processing</h3>
+                <p>We rely on third-party AI providers to process your audio recordings for transcription. These providers have their own privacy policies regarding how they handle and retain the data they process.</p>
+                
+                <h3>6. Payment Processing</h3>
+                <p>Quick Note AI is available on iOS devices. All payments and subscriptions are processed through Stripe, a secure third-party payment processor. We do not collect, process, or store your full payment information. Subscription management, including cancellations and refunds, is available through the Stripe billing portal.</p>
+                
+                <h3>7. No Account Creation</h3>
+                <p>Quick Note AI does not require you to create an account. All app data is stored locally on your device. If you wish to stop using the service, you can simply delete the app from your device. No additional termination process is required as we do not maintain user accounts or store your data on our servers.</p>
+                
+                <h3>8. Legal Compliance</h3>
+                <p>It is your responsibility to ensure you have the legal right to record conversations, meetings, or lectures in your jurisdiction. Many regions require consent from all parties being recorded. We recommend familiarizing yourself with local laws regarding audio recording before using this feature.</p>
+                
+                <h3>9. AI Limitations</h3>
+                <p>Our AI systems may make mistakes in transcriptions or summaries. The accuracy of transcription depends on various factors, including audio quality, background noise, speaker clarity, and technical limitations of AI systems.</p>
+            </div>
+            
+
+            
+            <!-- Ace My Classes Privacy -->
+            <div class="privacy-section" id="ace-privacy">
+                <h2>Ace My Classes - Privacy Policy</h2>
+                <p>Last Updated: September 1, 2025</p>
+
+                <h3>1. Information We Collect</h3>
+                <ul>
+                    <li><strong>Account Information:</strong> We use Firebase Authentication to manage your account. This includes an anonymous User ID, which can be linked to your Apple ID if you choose to sign in. When you sign in with Apple, we may receive your name and email address to personalize your experience.</li>
+                    <li><strong>Your Content:</strong> We collect and store the data you create to provide the service, including courses, notes, chapters, schedules, deliverables, subtasks, work sessions, flashcards, review history, audio recordings from lectures or voice quick-add, drawings, images, video timelapses from the Whiteboard feature, and AI Chat conversations.</li>
+                    <li><strong>Analytics:</strong> The app does not currently collect analytics data on user behavior. This may change in the future to help us improve the app, in which case this policy will be updated.</li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <ul>
+                    <li><strong>To Provide the Service:</strong> Your data powers the app's features, such as organizing notes, scheduling reminders, and syncing your data.</li>
+                    <li><strong>For AI Features:</strong> To provide AI-powered features, certain data is sent to our AI service provider (Google), including audio recordings for transcription, summarization, and content generation; text from your notes and recordings to provide context for AI Chat; and whiteboard data (audio, video, images) for AI-powered evaluation.</li>
+                    <li><strong>Service Improvement:</strong> We may use anonymized data in the future to understand usage patterns and improve our services.</li>
+                </ul>
+
+                <h3>3. Data Storage and Sharing</h3>
+                <ul>
+                    <li><strong>Firebase &amp; Google Cloud:</strong> All of Your Content is stored securely on Google Cloud Platform using Firebase services (Firestore and Cloud Storage). Your data is protected by security rules that prevent other users from accessing it.</li>
+                    <li><strong>Google Generative AI:</strong> Content is sent to Google's AI services for processing. According to Google's policies, this data is used to provide the feature and is not used to train their models without explicit consent. Audio files uploaded for processing are automatically deleted once the AI job is complete.</li>
+                    <li><strong>We Do Not Sell Your Data:</strong> We will never sell your personal information or Your Content to third parties.</li>
+                </ul>
+
+                <h3>4. Data Security</h3>
+                <p>We take reasonable measures to protect your data, including using secure cloud infrastructure and implementing strict access control rules. However, no system is 100% secure, and we cannot guarantee the absolute security of your information.</p>
+
+                <h3>5. Data Retention &amp; Deletion</h3>
+                <ul>
+                    <li>We retain Your Content as long as your account is active.</li>
+                    <li>You can delete your account at any time from the Profile screen. This permanently deletes your user account and all associated data from our systems, including from Firestore and Cloud Storage.</li>
+                </ul>
+
+                <h3>6. Your Rights</h3>
+                <p>You have the right to access, modify, and delete your data through the features provided in the app. For complete data deletion, use the "Delete Account" feature.</p>
+
+                <h3>7. Children's Privacy</h3>
+                <p>This app is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+
+                <h3>8. Changes to This Policy</h3>
+                <p>We may update this privacy policy. We will notify you of any significant changes by displaying a notice within the app or by other means.</p>
+
+                <h3>9. Contact Us</h3>
+                <p>If you have any questions about this policy, please contact us at <a href="mailto:hello@athenlabs.com?subject=Ace%20My%20Classes%20Privacy%20Inquiry">hello@athenlabs.com</a>.</p>
+            </div>
+
+            <!-- Ace SAT Privacy -->
+            <div class="privacy-section" id="acesat-privacy">
+                <h2>Ace SAT - Privacy Policy</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Local Data Processing</h3>
+                <p>Ace SAT is a basic application that operates primarily on your device. All core educational data, including your answers to questions and progress tracking, is stored locally on your device.</p>
+                
+                <h3>2. Usage Data Collection</h3>
+                <p>We collect anonymous usage data through Mixpanel analytics to help improve your experience with the app. This includes tracking how you interact with features and content to help us understand what's most valuable and identify areas for improvement. Your personal information is never linked to this usage data, and we do not track sensitive information like your specific answers to test questions.</p>
+                
+                <h3>3. Score Prediction</h3>
+                <p>The app includes a score prediction feature that uses a standard algorithm (not AI) to estimate potential SAT scores based on your performance within the app. This calculation happens entirely on your device without external processing.</p>
+                
+                <h3>4. Third-Party Services</h3>
+                <p>The app may use basic third-party services provided by your device's operating system or platform provider for functions like installation and updates. These interactions are subject to the privacy policies of those platform providers but do not involve sharing your educational data.</p>
+                
+                <h3>5. Data Control</h3>
+                <p>Since all your educational data is stored locally on your device, you can delete this information by either clearing the app's data through your device settings or by uninstalling the application.</p>
+                
+                <h3>6. Payment Processing</h3>
+                <p>Ace SAT is available on both iOS and Android devices:</p>
+                <ul>
+                    <li>For iOS users: All payments and subscriptions are processed through Stripe, a secure third-party payment processor. We do not collect, process, or store your full payment information. Subscription management, including cancellations and refunds, is available through the Stripe billing portal.</li>
+                    <li>For Android users: All payments and subscriptions are processed through the Google Play Store. We do not collect, process, or store your payment information. Subscription management, including cancellations and refunds, must be done through your Google Play Store account settings.</li>
+                </ul>
+                
+                <h3>7. No Account Creation</h3>
+                <p>Ace SAT does not require you to create an account. All app data is stored locally on your device. If you wish to stop using the service, you can simply delete the app from your device. No additional termination process is required as we do not maintain user accounts or store your data on our servers.</p>
+            </div>
+            
+            <!-- Ace ACT Privacy -->
+            <div class="privacy-section" id="aceact-privacy">
+                <h2>Ace ACT - Privacy Policy</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Local Data Processing</h3>
+                <p>Ace ACT is a basic application that operates primarily on your device. All core educational data, including your answers to questions and progress tracking, is stored locally on your device.</p>
+                
+                <h3>2. Usage Data Collection</h3>
+                <p>We collect anonymous usage data through Mixpanel analytics to help improve your experience with the app. This includes tracking how you interact with features and content to help us understand what's most valuable and identify areas for improvement. Your personal information is never linked to this usage data, and we do not track sensitive information like your specific answers to test questions.</p>
+                
+                <h3>3. Score Prediction</h3>
+                <p>The app includes a score prediction feature that uses a standard algorithm (not AI) to estimate potential ACT scores based on your performance within the app. This calculation happens entirely on your device without external processing.</p>
+                
+                <h3>4. Third-Party Services</h3>
+                <p>The app may use basic third-party services provided by your device's operating system or platform provider for functions like installation and updates. These interactions are subject to the privacy policies of those platform providers but do not involve sharing your educational data.</p>
+                
+                <h3>5. Data Control</h3>
+                <p>Since all your educational data is stored locally on your device, you can delete this information by either clearing the app's data through your device settings or by uninstalling the application.</p>
+                
+                <h3>6. Payment Processing</h3>
+                <p>Ace ACT is available on both iOS and Android devices:</p>
+                <ul>
+                    <li>For iOS users: All payments and subscriptions are processed through Stripe, a secure third-party payment processor. We do not collect, process, or store your full payment information. Subscription management, including cancellations and refunds, is available through the Stripe billing portal.</li>
+                    <li>For Android users: All payments and subscriptions are processed through the Google Play Store. We do not collect, process, or store your payment information. Subscription management, including cancellations and refunds, must be done through your Google Play Store account settings.</li>
+                </ul>
+                
+                <h3>7. No Account Creation</h3>
+                <p>Ace ACT does not require you to create an account. All app data is stored locally on your device. If you wish to stop using the service, you can simply delete the app from your device. No additional termination process is required as we do not maintain user accounts or store your data on our servers.</p>
+            </div>
+            
+            <!-- Ace PSAT Privacy -->
+            <div class="privacy-section" id="acepsat-privacy">
+                <h2>Ace PSAT - Privacy Policy</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Local Data Processing</h3>
+                <p>Ace PSAT is a basic application that operates primarily on your device. All core educational data, including your answers to questions and progress tracking, is stored locally on your device.</p>
+                
+                <h3>2. Usage Data Collection</h3>
+                <p>We collect anonymous usage data through Mixpanel analytics to help improve your experience with the app. This includes tracking how you interact with features and content to help us understand what's most valuable and identify areas for improvement. Your personal information is never linked to this usage data, and we do not track sensitive information like your specific answers to test questions.</p>
+                
+                <h3>3. Score Prediction</h3>
+                <p>The app includes a score prediction feature that uses a standard algorithm (not AI) to estimate potential PSAT scores based on your performance within the app. This calculation happens entirely on your device without external processing.</p>
+                
+                <h3>4. Third-Party Services</h3>
+                <p>The app may use basic third-party services provided by your device's operating system or platform provider for functions like installation and updates. These interactions are subject to the privacy policies of those platform providers but do not involve sharing your educational data.</p>
+                
+                <h3>5. Data Control</h3>
+                <p>Since all your educational data is stored locally on your device, you can delete this information by either clearing the app's data through your device settings or by uninstalling the application.</p>
+                
+                <h3>6. Payment Processing</h3>
+                <p>Ace PSAT is available on both iOS and Android devices:</p>
+                <ul>
+                    <li>For iOS users: All payments and subscriptions are processed through Stripe, a secure third-party payment processor. We do not collect, process, or store your full payment information. Subscription management, including cancellations and refunds, is available through the Stripe billing portal.</li>
+                    <li>For Android users: All payments and subscriptions are processed through the Google Play Store. We do not collect, process, or store your payment information. Subscription management, including cancellations and refunds, must be done through your Google Play Store account settings.</li>
+                </ul>
+                
+                <h3>7. No Account Creation</h3>
+                <p>Ace PSAT does not require you to create an account. All app data is stored locally on your device. If you wish to stop using the service, you can simply delete the app from your device. No additional termination process is required as we do not maintain user accounts or store your data on our servers.</p>
+            </div>
+            
+            <!-- Ace PreACT Privacy -->
+            <div class="privacy-section" id="acepreact-privacy">
+                <h2>Ace PreACT - Privacy Policy</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Local Data Processing</h3>
+                <p>Ace PreACT is a basic application that operates primarily on your device. All core educational data, including your answers to questions and progress tracking, is stored locally on your device.</p>
+                
+                <h3>2. Usage Data Collection</h3>
+                <p>We collect anonymous usage data through Mixpanel analytics to help improve your experience with the app. This includes tracking how you interact with features and content to help us understand what's most valuable and identify areas for improvement. Your personal information is never linked to this usage data, and we do not track sensitive information like your specific answers to test questions.</p>
+                
+                <h3>3. Score Prediction</h3>
+                <p>The app includes a score prediction feature that uses a standard algorithm (not AI) to estimate potential PreACT scores based on your performance within the app. This calculation happens entirely on your device without external processing.</p>
+                
+                <h3>4. Third-Party Services</h3>
+                <p>The app may use basic third-party services provided by your device's operating system or platform provider for functions like installation and updates. These interactions are subject to the privacy policies of those platform providers but do not involve sharing your educational data.</p>
+                
+                <h3>5. Data Control</h3>
+                <p>Since all your educational data is stored locally on your device, you can delete this information by either clearing the app's data through your device settings or by uninstalling the application.</p>
+                
+                <h3>6. Payment Processing</h3>
+                <p>Ace PreACT is available on both iOS and Android devices:</p>
+                <ul>
+                    <li>For iOS users: All payments and subscriptions are processed through Stripe, a secure third-party payment processor. We do not collect, process, or store your full payment information. Subscription management, including cancellations and refunds, is available through the Stripe billing portal.</li>
+                    <li>For Android users: All payments and subscriptions are processed through the Google Play Store. We do not collect, process, or store your payment information. Subscription management, including cancellations and refunds, must be done through your Google Play Store account settings.</li>
+                </ul>
+                
+                <h3>7. No Account Creation</h3>
+                <p>Ace PreACT does not require you to create an account. All app data is stored locally on your device. If you wish to stop using the service, you can simply delete the app from your device. No additional termination process is required as we do not maintain user accounts or store your data on our servers.</p>
+            </div>
+            
+            <!-- Faithful Privacy -->
+            <div class="privacy-section" id="faithful-privacy">
+                <h2>Faithful - Privacy Policy</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Introduction</h3>
+                <p>Faithful is a mobile application designed to provide users with daily Christian wallpapers featuring personalized verses, prayers, and colors. This privacy policy outlines how we handle your information.</p>
+                
+                <h3>2. Information We Collect</h3>
+                <p>Faithful primarily operates locally on your device. We may collect the following types of information:</p>
+                <ul>
+                    <li><strong>Personalization Preferences:</strong> Such as preferred Bible versions, color schemes, or specific themes if you provide them. This data is stored locally on your device.</li>
+                    <li><strong>Usage Data:</strong> We may collect anonymous usage data (e.g., feature usage frequency, app crashes) through third-party analytics services like Mixpanel or Firebase to help us improve the app. This data is aggregated and does not personally identify you.</li>
+                    <li><strong>Device Information:</strong> Basic device information (e.g., device model, OS version) may be collected by analytics services for troubleshooting and improvement purposes.</li>
+                </ul>
+                
+                <h3>3. How We Use Your Information</h3>
+                <p>The information collected is used to:</p>
+                <ul>
+                    <li>Provide and personalize your experience with the app.</li>
+                    <li>Understand app usage patterns to improve features and usability.</li>
+                    <li>Diagnose and fix technical issues.</li>
+                </ul>
+
+                <h3>4. Data Storage and Security</h3>
+                <p>Most of your personalization data is stored locally on your device. We do not store your personal Bible verses, prayers, or generated wallpapers on our servers. Anonymous analytics data is handled by third-party services according to their privacy policies.</p>
+
+                <h3>5. Third-Party Services</h3>
+                <p>Faithful may use third-party services for analytics (e.g., Mixpanel, Firebase Analytics) or to provide content (e.g., Bible verse APIs). These services have their own privacy policies, and we encourage you to review them.</p>
+
+                <h3>6. Payment Processing (If Applicable)</h3>
+                <p>If Faithful offers premium features or subscriptions:</p>
+                <ul>
+                    <li>For iOS users: All payments and subscriptions are processed through Stripe, a secure third-party payment processor. We do not collect, process, or store your full payment information. Subscription management is available through the Stripe billing portal.</li>
+                    <li>For Android users (if applicable): Payments would be processed through the Google Play Store under similar terms.</li>
+                </ul>
+
+                <h3>7. No Account Creation</h3>
+                <p>Faithful typically does not require user account creation. If you wish to stop using the service, you can delete the app from your device. If account creation is introduced in the future, this policy will be updated.</p>
+
+                <h3>8. Children's Privacy</h3>
+                <p>Faithful is not intended for children under the age of 4 (or the relevant age in your jurisdiction). We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information, we will take steps to delete it.</p>
+
+                <h3>9. Changes to This Privacy Policy</h3>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy within the app or on our website. You are advised to review this Privacy Policy periodically for any changes.</p>
+
+                <h3>10. Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:hello@athenlabs.com?subject=Faithful%20Privacy%20Policy%20Inquiry">hello@athenlabs.com</a>.</p>
+            </div>
+
+            <!-- Bedrot Privacy -->
+            <div class="privacy-section" id="bedrot-privacy">
+                <h2>Bedrot - Privacy Policy</h2>
+                <p>Last Updated: September 27, 2025</p>
+
+                <h3>1. Information We Collect</h3>
+                <ul>
+                    <li><strong>Account details:</strong> When you create or sign in to your Bedrot account, we collect your email address and store it securely in your device Keychain and on our servers so we can keep your profile in sync.</li>
+                    <li><strong>Alarm and snooze activity:</strong> We record the alarm schedules you create, the time zone on your device, whether alarms are paused, and how often you snooze. This includes device identifiers that help us apply the right billing rules.</li>
+                    <li><strong>Subscription status:</strong> We receive updates from Stripe about your active plan, trial state, or payment history so we can determine your access to Bedrot features.</li>
+                    <li><strong>App preferences:</strong> Bedrot stores local caches of your billing policy, alarm schedules, and consent settings on your device so alarms can keep working even without an internet connection.</li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <ul>
+                    <li><strong>To power your experience:</strong> Alarm schedules and snooze activity help the app wake you up on time and show meaningful insights about your mornings.</li>
+                    <li><strong>To manage billing:</strong> We use snooze data and subscription status to calculate metered charges and send reminders before an invoice is issued.</li>
+                    <li><strong>To improve Bedrot:</strong> Aggregated, de-identified metrics help us understand trends like average snooze time so we can tune policies and features.</li>
+                </ul>
+
+                <h3>3. Where Your Data Lives</h3>
+                <p>Your schedules, policies, and consent choices are cached in the Bedrot app’s secure storage so alarms can run offline. Account details, billing history, and snooze logs are stored in our encrypted databases hosted in the United States. We keep this information only as long as needed to provide the service or meet legal requirements.</p>
+
+                <h3>4. How We Protect It</h3>
+                <p>Bedrot requires AlarmKit permissions on your device, uses HTTPS with bearer tokens for every API call, and stores sensitive tokens like refresh credentials in the iOS Keychain. Our servers rely on rate limiting, signed JWTs, and strict access controls. Payment secrets for Stripe are stored in secured environment variables.</p>
+
+                <h3>5. Partners We Work With</h3>
+                <p>We rely on trusted partners to deliver Bedrot: Stripe processes card payments, AlarmKit and ActivityKit deliver your wake-up experiences, and our backend uses trusted logging and security tooling. These providers only receive the information needed to perform their services.</p>
+
+                <h3>6. Your Choices</h3>
+                <ul>
+                    <li>Update schedules and refresh your data anytime inside the app.</li>
+                    <li>Visit the customer center or Stripe billing portal from Settings to review invoices or manage your subscription.</li>
+                    <li>Contact us if you would like to access, export, or delete your data—we’re happy to help.</li>
+                </ul>
+
+                <h3>7. Children’s Privacy</h3>
+                <p>Bedrot is designed for adults. We do not knowingly collect personal information from children under 13. If we learn that a child has provided personal data, we will delete it promptly.</p>
+
+                <h3>8. Contact Us</h3>
+                <p>Questions about privacy? Email us at <a href="mailto:hello@athenlabs.com?subject=Bedrot%20Privacy%20Inquiry">hello@athenlabs.com</a>.</p>
+            </div>
+
+            <!-- LONGR Privacy -->
+            <div class="privacy-section" id="longr-privacy">
+                <h2>LONGR - Privacy Policy</h2>
+                <p>Last Updated: September 1, 2025</p>
+
+                <h3>1. Program Overview</h3>
+                <p>LONGR is a 12-week audio program featuring breathwork, pelvic-floor exercises, and mindset drills to help men improve stamina and confidence.</p>
+
+                <h3>2. Local Audio Playback</h3>
+                <p>Training audio is stored on your device for offline use. We do not collect recordings or track how you listen.</p>
+
+                <h3>3. Subscription Management</h3>
+                <p>Payments are processed through Stripe, a secure third-party payment processor. We do not store your full payment details. You can cancel anytime in the Stripe billing portal.</p>
+
+                <h3>4. Usage Data</h3>
+                <p>LONGR does not collect analytics or usage metrics. All training progress stays on your device.</p>
+
+                <h3>5. No Personal Profiles</h3>
+                <p>LONGR does not require account creation. Progress is saved only on your device and is removed when you uninstall the app.</p>
+
+                <h3>6. Age Restriction</h3>
+                <p>This app is intended for adults and is not directed to children under 18.</p>
+
+                <h3>7. Contact Us</h3>
+                <p>If you have questions about this policy, contact <a href="mailto:hello@athenlabs.com?subject=LONGR%20Privacy%20Policy">hello@athenlabs.com</a>.</p>
+            </div>
+            <!-- Additional app-specific privacy policies would go here -->
+            
+        </div>
+    </section>
+
+    <!-- JavaScript for the app selector functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all app buttons and sections
+            const appButtons = document.querySelectorAll('.app-btn');
+            const privacySections = document.querySelectorAll('.privacy-section');
+            
+            // Check URL parameters for direct app selection
+            const urlParams = new URLSearchParams(window.location.search);
+            const appParam = urlParams.get('app');
+            
+            if (appParam) {
+                // Find the button for the specified app
+                const targetButton = document.querySelector(`.app-btn[data-app="${appParam}"]`);
+                if (targetButton) {
+                    // Simulate a click on that button
+                    simulateButtonClick(targetButton);
+                } else {
+                    // Default to general privacy if button not found
+                    const generalButton = document.querySelector(`.app-btn[data-app="general"]`);
+                    simulateButtonClick(generalButton);
+                }
+            } else {
+                // Default to general privacy if no app parameter
+                const generalButton = document.querySelector(`.app-btn[data-app="general"]`);
+                simulateButtonClick(generalButton);
+            }
+            
+            // Add click event listener to all app buttons
+            appButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    appButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Hide all privacy sections
+                    privacySections.forEach(section => section.classList.remove('active'));
+                    
+                    // Show the selected privacy section
+                    const appName = this.getAttribute('data-app');
+                    const targetSection = document.getElementById(`${appName}-privacy`);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    } else {
+                        // If specific section doesn't exist, show general privacy
+                        document.getElementById('general-privacy').classList.add('active');
+                    }
+                    
+                    // Update URL parameter without refreshing
+                    const newUrl = window.location.pathname + `?app=${appName}`;
+                    history.pushState({}, '', newUrl);
+                });
+            });
+            
+            function simulateButtonClick(button) {
+                // Remove active class from all buttons
+                appButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to target button
+                button.classList.add('active');
+                
+                // Hide all privacy sections
+                privacySections.forEach(section => section.classList.remove('active'));
+                
+                // Show the selected privacy section
+                const appName = button.getAttribute('data-app');
+                const targetSection = document.getElementById(`${appName}-privacy`);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                } else {
+                    // If specific section doesn't exist, show general privacy
+                    document.getElementById('general-privacy').classList.add('active');
+                }
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Athen Labs, LLC</h2>
+                    <p>56 Broad Street, STE 14022<br>Boston, MA 02109<br>United States</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="mailto:hello@athenlabs.com?subject=Contact%20Inquiry">Contact</a></li>
+                        <li><a href="mailto:hello@athenlabs.com?subject=Career%20Inquiry">Careers</a></li>
+                        <li><a href="../support">Support</a></li>
+                        <li><a href="../terms/">Terms</a></li>
+                        <li><a href="index.html">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Athen Labs, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

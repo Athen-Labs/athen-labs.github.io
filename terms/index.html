@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athen Labs | Terms</title>
+    <link rel="icon" href="../athenlabs.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Terms page specific styles */
+        .terms-header {
+            padding: 120px 0 20px;
+            text-align: center;
+            background-color: var(--color-bg-primary);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .terms-header h1 {
+            margin-bottom: 20px;
+            color: var(--color-text-accent);
+        }
+        
+        .app-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .app-category {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+        
+        .app-category h3 {
+            width: 180px;
+            text-align: right;
+            margin-right: 15px;
+            color: var(--color-text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .app-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            flex-grow: 1;
+        }
+        
+        .app-selector button {
+            padding: 6px 12px;
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .app-selector button:hover {
+            background-color: var(--color-bg-accent);
+        }
+        
+        .app-selector button.active {
+            background-color: var(--color-button-bg);
+            color: var(--color-button-text);
+            border-color: var(--color-button-bg);
+        }
+        
+        .terms-content {
+            padding: 40px 0 60px;
+        }
+        
+        .terms-section {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .terms-section.active {
+            display: block;
+        }
+        
+        .terms-section h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text-accent);
+        }
+        
+        .terms-section h3 {
+            margin: 25px 0 15px;
+            color: var(--color-text-primary);
+        }
+        
+        .terms-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+        
+        .terms-section ul, .terms-section ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .terms-section li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: var(--color-text-secondary);
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-to-home a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+        
+        .back-to-home a i {
+            margin-right: 8px;
+        }
+        
+        .back-to-home a:hover {
+            color: #334155;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">Athen Labs</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#mobile-apps">Consumer Apps</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Back to Home link -->
+    <div class="back-to-home" style="margin: 20px auto; text-align: center;">
+        <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+    <!-- Terms Header -->
+    <section class="terms-header">
+        <div class="container">
+            <h1>User Terms of Service</h1>
+            <p>Please select an application to view its terms of service</p>
+            
+            <div class="app-categories">
+                <div class="app-category">
+                    <h3>General</h3>
+                    <div class="app-selector">
+                        <button class="app-btn active" data-app="general">General Terms</button>
+                    </div>
+                </div>
+                
+                <div class="app-category">
+                    <h3>Consumer Apps</h3>
+                    <div class="app-selector">
+                        <button class="app-btn" data-app="quicknote">Quick Note AI</button>
+                        <button class="app-btn" data-app="ace">Ace My Classes</button>
+                        <button class="app-btn" data-app="acesat">Ace SAT</button>
+                        <button class="app-btn" data-app="aceact">Ace ACT</button>
+                        <button class="app-btn" data-app="bedrot">Bedrot</button>
+                        <button class="app-btn" data-app="longr">LONGR</button>
+                        <button class="app-btn" data-app="faithful">Faithful</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <!-- General Terms of Service -->
+            <div class="terms-section" id="general-terms">
+                <h2>General Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <p>Please read these Terms of Service ("Terms") carefully before using any applications, websites, or services (collectively, the "Services") operated by Athen Labs Inc. ("Athen Labs", "we", "us", or "our").</p>
+                
+                <p>By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part of these Terms, you may not access our Services.</p>
+                
+                <h3>1. Use of Services</h3>
+                <p>You agree to use our Services only for lawful purposes and in accordance with these Terms. You are responsible for compliance with all applicable local laws.</p>
+                
+                <h3>2. License and Restrictions</h3>
+                <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, and revocable license to access and use our Services. You may not:</p>
+                <ul>
+                    <li>Use our Services in any way that could damage, disable, overburden, or impair our systems</li>
+                    <li>Use any robot, spider, or other automated device to access our Services</li>
+                    <li>Copy, reproduce, distribute, or create derivative works based on our Services without our express permission</li>
+                    <li>Attempt to reverse engineer, modify, or gain unauthorized access to our Services</li>
+                    <li>Use our Services for any illegal or unauthorized purpose</li>
+                </ul>
+                
+                <h3>3. Account Creation and Management</h3>
+                <p>For our productivity and job search applications (excluding consumer apps), you may need to create an account to access and use our Services. When creating an account, you agree to provide accurate, current, and complete information. You are responsible for maintaining the security of your account credentials and for all activities that occur under your account. We reserve the right to refuse service, terminate accounts, or remove content at our discretion.</p>
+                <p>You are solely responsible for:</p>
+                <ul>
+                    <li>Maintaining the confidentiality of your account password and login information</li>
+                    <li>Restricting access to your account and devices</li>
+                    <li>Promptly notifying us of any unauthorized use of your account or any other breach of security</li>
+                    <li>Ensuring that all account information you provide is accurate and up-to-date</li>
+                </ul>
+                
+                <h3>4. Account Termination</h3>
+                <p>You may delete your account at any time through your account settings or by contacting our support team. Upon termination, your right to use the Services will immediately cease.</p>
+                <p>We may suspend or terminate your account or access to our Services at any time, without prior notice or liability, for any reason, including but not limited to:</p>
+                <ul>
+                    <li>Violation of these Terms</li>
+                    <li>Suspected fraudulent, abusive, or illegal activity</li>
+                    <li>Extended periods of inactivity</li>
+                    <li>Requests by law enforcement or government agencies</li>
+                </ul>
+                
+                <h3>5. Payment and Billing</h3>
+                <p>For premium features or paid products, payment is processed through Stripe, a third-party payment processor. By making a purchase, you agree to provide accurate and complete payment information and authorize us to charge your chosen payment method for the products or services you have selected, plus any applicable taxes and other charges.</p>
+                <p>You agree to:</p>
+                <ul>
+                    <li>Comply with all applicable Stripe terms and conditions</li>
+                    <li>Provide current, complete, and accurate payment information</li>
+                    <li>Promptly update your account and payment information, including email address and payment method details, if there are any changes</li>
+                    <li>Pay all charges incurred by users of your payment method at the prices in effect when such charges are incurred</li>
+                </ul>
+                
+                <h3>6. Cancellation and Refunds</h3>
+                <p>You may cancel your subscription at any time through your account settings or by contacting our support team. Upon cancellation, you will retain access to the paid features until the end of your current billing period, after which you will lose access to premium features.</p>
+                <p>Refunds may be provided at our discretion for:</p>
+                <ul>
+                    <li>Technical issues that significantly impair the functionality of the service</li>
+                    <li>Billing errors resulting in overcharges</li>
+                    <li>Other circumstances as determined by our support team</li>
+                </ul>
+                <p>To request a refund, please contact our support team with details of your purchase and the reason for your request.</p>
+                
+                <h3>7. Privacy Policy</h3>
+                <p>Your use of our Services is also governed by our Privacy Policy, which can be found at <a href="https://athenlabs.com/privacy">https://athenlabs.com/privacy</a>. Please review this policy to understand our practices regarding the collection, use, and disclosure of your information.</p>
+                
+                <h3>8. Intellectual Property</h3>
+                <p>The Services and their original content, features, and functionality are and will remain the exclusive property of Athen Labs and its licensors. Our Services are protected by copyright, trademark, and other laws of both the United States and foreign countries.</p>
+                
+                <h3>9. User Content</h3>
+                <p>By uploading, submitting, or otherwise making available any content through our Services, you grant us a non-exclusive, transferable, sub-licensable, royalty-free, worldwide license to use, copy, modify, create derivative works based on, distribute, publicly display, publicly perform, and otherwise exploit such content in connection with operating and providing our Services.</p>
+                <p>You represent and warrant that you own or have the necessary rights to such content and that the use of such content does not violate these Terms, infringe on any intellectual property rights, or violate any third party's rights.</p>
+                
+                <h3>10. Third-Party Services</h3>
+                <p>Our Services may contain links to third-party websites or services that are not owned or controlled by Athen Labs. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You further acknowledge and agree that Athen Labs shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services available on or through any such websites or services.</p>
+                
+                <h3>11. Disclaimer of Warranties</h3>
+                <p>Our Services are provided "as is" and "as available" without any warranties of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that our Services will be uninterrupted, secure, or error-free, that defects will be corrected, or that our Services are free of viruses or other harmful components.</p>
+                
+                <h3>12. Limitation of Liability</h3>
+                <p>In no event shall Athen Labs, its officers, directors, employees, or agents, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use our Services, or any conduct or content of any third party on our Services.</p>
+                
+                <h3>13. Indemnification</h3>
+                <p>You agree to defend, indemnify, and hold harmless Athen Labs and its officers, directors, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including but not limited to attorney's fees) arising from your use of and access to our Services, your violation of these Terms, or your violation of any third party's rights.</p>
+                
+                <h3>14. Governing Law</h3>
+                <p>These Terms shall be governed and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions. Any legal action or proceeding relating to your access to or use of our Services shall be instituted exclusively in the federal or state courts located in San Francisco, California, and you agree to submit to the personal jurisdiction of such courts.</p>
+                
+                <h3>15. Changes to Terms</h3>
+                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our Services after those revisions become effective, you agree to be bound by the revised terms.</p>
+                
+                <h3>16. Contact Us</h3>
+                <p>If you have any questions about these Terms, please contact us at support@athenlabs.com.</p>
+            </div>
+            
+            <!-- Quick Note AI Terms -->
+            <div class="terms-section" id="quicknote-terms">
+                <h2>Quick Note AI - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. App Description</h3>
+                <p>Quick Note AI is a mobile application that helps users record, transcribe, and analyze audio recordings of meetings, lectures, and other events using artificial intelligence. The app allows you to create audio recordings and convert them to text transcripts.</p>
+                
+                <h3>2. Recording Functionality</h3>
+                <p>The app uses your device's microphone to record audio. You control when recording begins and ends. By using this functionality, you confirm that you have obtained any necessary permissions to record in accordance with local laws and regulations.</p>
+                
+                <h3>3. Legal Compliance</h3>
+                <p>You are solely responsible for ensuring that your use of the recording features complies with applicable laws in your jurisdiction. Many regions require consent from all parties before recording conversations. Recording without proper consent may violate wiretapping or eavesdropping laws and could subject you to civil or criminal penalties.</p>
+                
+                <h3>4. AI Processing</h3>
+                <p>When you choose to transcribe recordings, the audio is processed by our AI providers. You acknowledge that while we strive for accuracy, AI transcription and summarization may contain errors or misinterpretations. You should review any automatically generated content for accuracy before relying on it.</p>
+                
+                <h3>5. Data Processing and Storage</h3>
+                <p>Audio recordings are stored locally on your device and are not uploaded to our servers except when you specifically request transcription. When you request transcription, the audio is processed by our AI providers who may maintain records of processed content according to their own policies. You can delete notes from your device, but processed transcripts may remain in AI provider systems.</p>
+                
+                <h3>6. Mobile Platform Terms</h3>
+                <p>In addition to these terms, your use of Quick Note AI is subject to the terms of service of the platform where you downloaded the app (your app platform). Each platform may have additional requirements or restrictions.</p>
+                
+                <h3>7. Prohibited Uses</h3>
+                <p>You agree not to use Quick Note AI for any unlawful purpose, including but not limited to unauthorized surveillance, harassment, or recording of confidential communications without proper authorization. We reserve the right to terminate access for users who violate these terms.</p>
+                
+                <h3>8. Contact Information</h3>
+                <p>For support with Quick Note AI, please contact <a href="mailto:hello@athenlabs.com?subject=Quick%20Note%20AI%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+
+
+            
+            <!-- Ace My Classes Terms -->
+            <div class="terms-section" id="ace-terms">
+                <h2>Ace My Classes - Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+
+                <h3>1. About the Service</h3>
+                <ul>
+                    <li>Ace My Classes is a learning and productivity tool designed to help you organize class materials, take notes, and study effectively.</li>
+                    <li>The app uses artificial intelligence services, powered by Google's Gemini models, to provide features like transcription, summarization, and content generation.</li>
+                </ul>
+
+                <h3>2. Your Account</h3>
+                <ul>
+                    <li>You can start using the app with an anonymous account. To sync your data and unlock all features, you can link your account to Sign in with Apple.</li>
+                    <li>You are responsible for all activity that occurs under your account.</li>
+                </ul>
+
+                <h3>3. Your Content</h3>
+                <ul>
+                    <li>You own all the content you create in the app, including your notes, recordings, flashcards, and tasks ("Your Content").</li>
+                    <li>By using the app, you grant us a license to store, process, and modify Your Content solely for the purpose of providing the app's services to you. For example, we need this permission to upload your recordings for AI processing or to sync your notes across devices.</li>
+                    <li>You are responsible for Your Content. Do not upload or record anything illegal, infringing on others' rights, or for which you do not have the necessary permissions.</li>
+                </ul>
+
+                <h3>4. Use of Artificial Intelligence</h3>
+                <ul>
+                    <li>To provide features like transcription, summarization, and AI chat, Your Content (such as audio recordings and notes) is sent to and processed by Google's Generative AI models.</li>
+                    <li><strong>Disclaimer:</strong> AI-generated content can sometimes be inaccurate or incomplete. It is provided for informational and study purposes only. You should always verify critical information. We are not liable for any errors or omissions in AI-generated content.</li>
+                </ul>
+
+                <h3>5. Prohibited Use</h3>
+                <p>You agree not to misuse the service, including attempting to reverse-engineer the app, disrupt our servers, or use the service for any illegal purpose.</p>
+
+                <h3>6. Service Availability &amp; Termination</h3>
+                <ul>
+                    <li>We strive to keep the service available, but it is provided "as-is" without warranties of any kind. We are not liable for any data loss or service interruption.</li>
+                    <li>You can delete your account at any time through the Profile screen. This action is permanent and will delete all of your associated data.</li>
+                    <li>We reserve the right to suspend or terminate your account if you violate these terms.</li>
+                </ul>
+
+                <h3>7. Changes to Terms</h3>
+                <p>We may update these terms from time to time. We will notify you of any significant changes by displaying a notice within the app or by other means.</p>
+            </div>
+
+            <!-- Ace SAT Terms -->
+            <div class="terms-section" id="acesat-terms">
+                <h2>Ace SAT - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Application Description</h3>
+                <p>Ace SAT is a basic educational application designed to help students prepare for the SAT exam through practice questions, study materials, and performance tracking. The application operates entirely on your local device without transmitting data to external servers.</p>
+                
+                <h3>2. Data Processing and Analytics</h3>
+                <p>Most features of the application, including the score prediction algorithm, operate locally on your device. To improve our products, we collect anonymous usage data about how you interact with the app using Mixpanel analytics. This helps us understand which features are most valuable and identify areas for improvement. We do not collect or track your specific answers to questions or link usage data to your personal information.</p>
+                
+                <h3>3. Educational Content</h3>
+                <p>The practice questions, explanations, and study materials provided in Ace SAT are created to reflect the content and format of the actual SAT exam, but we do not claim official affiliation with the College Board or the SAT program.</p>
+                
+                <h3>4. Score Prediction Disclaimer</h3>
+                <p>The score prediction feature uses a standard algorithm to estimate potential SAT performance based on your in-app practice results. This prediction is provided for educational purposes only and may not accurately reflect your performance on the actual SAT exam.</p>
+                
+                <h3>5. User Accounts</h3>
+                <p>Any account or profile information you create is stored locally on your device. We do not maintain user accounts on external servers.</p>
+                
+                <h3>6. Mobile Platform Terms</h3>
+                <p>Your use of Ace SAT is also subject to the terms of service of the platform where you downloaded the app (your app platform). Each platform may have additional requirements or restrictions.</p>
+                
+                <h3>7. Contact Information</h3>
+                <p>For support with Ace SAT, please contact <a href="mailto:hello@athenlabs.com?subject=Ace%20SAT%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+            
+            <!-- Ace ACT Terms -->
+            <div class="terms-section" id="aceact-terms">
+                <h2>Ace ACT - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Application Description</h3>
+                <p>Ace ACT is a basic educational application designed to help students prepare for the ACT exam through practice questions, study materials, and performance tracking. The application operates entirely on your local device without transmitting data to external servers.</p>
+                
+                <h3>2. Data Processing and Analytics</h3>
+                <p>Most features of the application, including the score prediction algorithm, operate locally on your device. To improve our products, we collect anonymous usage data about how you interact with the app using Mixpanel analytics. This helps us understand which features are most valuable and identify areas for improvement. We do not collect or track your specific answers to questions or link usage data to your personal information.</p>
+                
+                <h3>3. Educational Content</h3>
+                <p>The practice questions, explanations, and study materials provided in Ace ACT are created to reflect the content and format of the actual ACT exam, but we do not claim official affiliation with ACT, Inc.</p>
+                
+                <h3>4. Score Prediction Disclaimer</h3>
+                <p>The score prediction feature uses a standard algorithm to estimate potential ACT performance based on your in-app practice results. This prediction is provided for educational purposes only and may not accurately reflect your performance on the actual ACT exam.</p>
+                
+                <h3>5. User Accounts</h3>
+                <p>Any account or profile information you create is stored locally on your device. We do not maintain user accounts on external servers.</p>
+                
+                <h3>6. Mobile Platform Terms</h3>
+                <p>Your use of Ace ACT is also subject to the terms of service of the platform where you downloaded the app (your app platform). Each platform may have additional requirements or restrictions.</p>
+                
+                <h3>7. Contact Information</h3>
+                <p>For support with Ace ACT, please contact <a href="mailto:hello@athenlabs.com?subject=Ace%20ACT%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+
+            <!-- Bedrot Terms -->
+            <div class="terms-section" id="bedrot-terms">
+                <h2>Bedrot - Terms of Service</h2>
+                <p>Last Updated: September 27, 2025</p>
+
+                <h3>1. What Bedrot Does</h3>
+                <p>Bedrot is a mobile app that schedules wake-up alarms, tracks when you snooze, and helps you build healthier sleep habits. The service needs AlarmKit access on your device and a reliable internet connection to sync alarm schedules, snooze metrics, and billing updates.</p>
+
+                <h3>2. Your Account and Access</h3>
+                <ul>
+                    <li>You can sign in with your email or Sign in with Apple. Each account is linked to a secure customer profile in our billing system.</li>
+                    <li>Keep your contact details accurate and make sure AlarmKit permissions stay enabled so alarms can trigger properly.</li>
+                    <li>Authentication tokens are issued to protect your account. Do not share your login credentials.</li>
+                </ul>
+
+                <h3>3. Billing and Payments</h3>
+                <ul>
+                    <li>Bedrot billing is handled through Stripe.</li>
+                    <li>Depending on your plan, we may calculate usage-based charges for extra snoozes. You will see invoices and checkout options directly in the app.</li>
+                    <li>You are responsible for any outstanding balances. Contact us if you need help with refunds or billing disputes.</li>
+                </ul>
+
+                <h3>4. Using Bedrot Responsibly</h3>
+                <ul>
+                    <li>Set truthful alarm schedules and do not tamper with snooze tracking or billing safeguards.</li>
+                    <li>Only use Bedrot on devices you own or control, and do not attempt to access another user’s account.</li>
+                    <li>You are responsible for maintaining device health (battery, network access, do-not-disturb settings) that could affect alarm delivery.</li>
+                </ul>
+
+                <h3>5. Service Limitations</h3>
+                <p>We work hard to deliver reliable alarms, but we cannot guarantee Bedrot will work in every situation. Missed alarms can happen if AlarmKit permissions are revoked, the device is powered off, or connectivity issues prevent schedule updates. Metrics and billing summaries may be delayed if the app cannot reach our servers.</p>
+
+                <h3>6. Ending Your Service</h3>
+                <ul>
+                    <li>You may cancel subscriptions in the Stripe billing portal at any time. Some plans renew automatically until canceled.</li>
+                    <li>If you close your account, we delete your schedules, snooze history, and billing policies from our systems, subject to any legal retention requirements.</li>
+                    <li>Outstanding charges remain due even after cancellation. Contact support if you need help settling your balance or requesting data deletion.</li>
+                </ul>
+
+                <h3>7. Contact Us</h3>
+                <p>Need assistance with Bedrot? Email <a href="mailto:hello@athenlabs.com?subject=Bedrot%20Terms%20Inquiry">hello@athenlabs.com</a> and our team will respond.</p>
+            </div>
+
+            <!-- Ace PSAT Terms -->
+            <div class="terms-section" id="acepsat-terms">
+                <h2>Ace PSAT - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Application Description</h3>
+                <p>Ace PSAT is a basic educational application designed to help students prepare for the PSAT exam through practice questions, study materials, and performance tracking. The application operates entirely on your local device without transmitting data to external servers.</p>
+                
+                <h3>2. Data Processing and Analytics</h3>
+                <p>Most features of the application, including the score prediction algorithm, operate locally on your device. To improve our products, we collect anonymous usage data about how you interact with the app using Mixpanel analytics. This helps us understand which features are most valuable and identify areas for improvement. We do not collect or track your specific answers to questions or link usage data to your personal information.</p>
+                
+                <h3>3. Educational Content</h3>
+                <p>The practice questions, explanations, and study materials provided in Ace PSAT are created to reflect the content and format of the actual PSAT exam, but we do not claim official affiliation with the College Board or the PSAT program.</p>
+                
+                <h3>4. Score Prediction Disclaimer</h3>
+                <p>The score prediction feature uses a standard algorithm to estimate potential PSAT performance based on your in-app practice results. This prediction is provided for educational purposes only and may not accurately reflect your performance on the actual PSAT exam.</p>
+                
+                <h3>5. User Accounts</h3>
+                <p>Any account or profile information you create is stored locally on your device. We do not maintain user accounts on external servers.</p>
+                
+                <h3>6. Mobile Platform Terms</h3>
+                <p>Your use of Ace PSAT is also subject to the terms of service of the platform where you downloaded the app (your app platform). Each platform may have additional requirements or restrictions.</p>
+                
+                <h3>7. Contact Information</h3>
+                <p>For support with Ace PSAT, please contact <a href="mailto:hello@athenlabs.com?subject=Ace%20PSAT%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+            
+            <!-- Ace PreACT Terms -->
+            <div class="terms-section" id="acepreact-terms">
+                <h2>Ace PreACT - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Application Description</h3>
+                <p>Ace PreACT is a basic educational application designed to help students prepare for the PreACT exam through practice questions, study materials, and performance tracking. The application operates entirely on your local device without transmitting data to external servers.</p>
+                
+                <h3>2. Data Processing and Analytics</h3>
+                <p>Most features of the application, including the score prediction algorithm, operate locally on your device. To improve our products, we collect anonymous usage data about how you interact with the app using Mixpanel analytics. This helps us understand which features are most valuable and identify areas for improvement. We do not collect or track your specific answers to questions or link usage data to your personal information.</p>
+                
+                <h3>3. Educational Content</h3>
+                <p>The practice questions, explanations, and study materials provided in Ace PreACT are created to reflect the content and format of the actual PreACT exam, but we do not claim official affiliation with ACT, Inc.</p>
+                
+                <h3>4. Score Prediction Disclaimer</h3>
+                <p>The score prediction feature uses a standard algorithm to estimate potential PreACT performance based on your in-app practice results. This prediction is provided for educational purposes only and may not accurately reflect your performance on the actual PreACT exam.</p>
+                
+                <h3>5. User Accounts</h3>
+                <p>Any account or profile information you create is stored locally on your device. We do not maintain user accounts on external servers.</p>
+                
+                <h3>6. Mobile Platform Terms</h3>
+                <p>Your use of Ace PreACT is also subject to the terms of service of the platform where you downloaded the app (your app platform). Each platform may have additional requirements or restrictions.</p>
+                
+                <h3>7. Contact Information</h3>
+                <p>For support with Ace PreACT, please contact <a href="mailto:hello@athenlabs.com?subject=Ace%20PreACT%20Support">hello@athenlabs.com</a>.</p>
+            </div>
+
+            <!-- LONGR Terms -->
+            <div class="terms-section" id="longr-terms">
+                <h2>LONGR - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+
+                <h3>1. App Description</h3>
+                <p>LONGR offers a 12-week audio curriculum focused on breathwork, pelvic-floor exercises, and mindset techniques. The content is educational and not medical advice.</p>
+
+                <h3>2. Usage</h3>
+                <p>You may use the training materials for your personal, non-commercial purposes only. Do not redistribute the audio or text without permission.</p>
+
+                <h3>3. Subscriptions</h3>
+                <p>Subscriptions are billed through Stripe and renew automatically unless canceled in the Stripe billing portal before the end of the current term.</p>
+
+                <h3>4. Health Disclaimer</h3>
+                <p>Consult a healthcare professional before beginning any new exercise routine. The app is not a substitute for professional medical advice.</p>
+
+                <h3>5. Termination</h3>
+                <p>You may stop using LONGR at any time by deleting the app. We may terminate access if you violate these Terms.</p>
+
+                <h3>6. Changes to Terms</h3>
+                <p>We may modify these Terms periodically. Continued use after updates signifies your acceptance of the revised Terms.</p>
+
+                <h3>7. Contact Us</h3>
+                <p>For questions about these Terms, email <a href="mailto:hello@athenlabs.com?subject=LONGR%20Terms">hello@athenlabs.com</a>.</p>
+            </div>
+
+            <!-- Faithful Terms -->
+            <div class="terms-section" id="faithful-terms">
+                <h2>Faithful - User Terms of Service</h2>
+                <p>Last Updated: September 1, 2025</p>
+                
+                <h3>1. Acceptance of Terms</h3>
+                <p>By downloading, accessing, or using the Faithful mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+                
+                <h3>2. App Description</h3>
+                <p>Faithful provides users with daily Christian wallpapers, featuring personalized Bible verses, prayers, and color schemes. The App is intended for personal, non-commercial use to inspire and support your faith.</p>
+                
+                <h3>3. License to Use</h3>
+                <p>Athen Labs grants you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial purposes, subject to these Terms.</p>
+                
+                <h3>4. User Conduct</h3>
+                <p>You agree to use the App in a manner consistent with its intended purpose and in compliance with all applicable laws and regulations. You agree not to:</p>
+                <ul>
+                    <li>Modify, copy, distribute, or create derivative works based on the App.</li>
+                    <li>Attempt to reverse engineer, decompile, or discover the source code of the App.</li>
+                    <li>Use the App for any unlawful or prohibited purpose.</li>
+                </ul>
+
+                <h3>5. Content</h3>
+                <p>The Bible verses, prayers, and other content provided within the App are for inspirational and devotional purposes. While we strive for accuracy, we do not guarantee the completeness or correctness of all content. Different Bible translations may be used.</p>
+                <p>You are responsible for any personalization choices you make within the App. Generated wallpapers are for your personal use.</p>
+
+                <h3>6. Intellectual Property</h3>
+                <p>The App, including its design, features, and underlying technology, as well as all content provided by Athen Labs, are the property of Athen Labs or its licensors and are protected by copyright and other intellectual property laws. The "Faithful" name and logo are trademarks of Athen Labs.</p>
+
+                <h3>7. Third-Party Services</h3>
+                <p>The App may integrate with or rely on third-party services (e.g., for Bible verse APIs, analytics). Your use of such third-party services may be subject to their respective terms and conditions and privacy policies.</p>
+
+                <h3>8. Disclaimers</h3>
+                <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. ATHEN LABS DOES NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE.</p>
+                
+                <h3>9. Limitation of Liability</h3>
+                <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, ATHEN LABS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (A) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE APP; (B) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE APP.</p>
+                
+                <h3>10. Subscriptions and Payments (If Applicable)</h3>
+                <p>If the App offers premium features via subscription:</p>
+                <ul>
+                    <li>Payments will be processed through Stripe web checkout.</li>
+                    <li>Subscriptions may auto-renew unless canceled in the Stripe billing portal before the end of the current period.</li>
+                    <li>Please refer to Stripe's terms for managing subscriptions and refunds.</li>
+                </ul>
+
+                <h3>11. Termination</h3>
+                <p>We may terminate or suspend your access to the App at any time, without prior notice or liability, for any reason, including if you breach these Terms.</p>
+
+                <h3>12. Changes to Terms</h3>
+                <p>We reserve the right to modify these Terms at any time. We will notify you of significant changes by posting the new Terms within the App or on our website. Your continued use of the App after such changes constitutes your acceptance of the new Terms.</p>
+                
+                <h3>13. Governing Law</h3>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law principles.</p>
+
+                <h3>14. Contact Us</h3>
+                <p>If you have any questions about these Terms, please contact us at <a href="mailto:hello@athenlabs.com?subject=Faithful%20Terms%20of%20Service%20Inquiry">hello@athenlabs.com</a>.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Athen Labs, LLC</h2>
+                    <p>56 Broad Street, STE 14022<br>Boston, MA 02109<br>United States</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="mailto:hello@athenlabs.com?subject=Contact%20Inquiry">Contact</a></li>
+                        <li><a href="mailto:hello@athenlabs.com?subject=Career%20Inquiry">Careers</a></li>
+                        <li><a href="../support">Support</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Athen Labs, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for tab switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get buttons and sections
+            const appButtons = document.querySelectorAll('.app-btn');
+            const termsSections = document.querySelectorAll('.terms-section');
+            
+            // Check URL parameters for direct app selection
+            const urlParams = new URLSearchParams(window.location.search);
+            const appParam = urlParams.get('app');
+            
+            if (appParam) {
+                // Find the button for the specified app
+                const targetButton = document.querySelector(`.app-btn[data-app="${appParam}"]`);
+                if (targetButton) {
+                    // Simulate a click on that button
+                    simulateButtonClick(targetButton);
+                } else {
+                    // Default to general terms if button not found
+                    const generalButton = document.querySelector(`.app-btn[data-app="general"]`);
+                    simulateButtonClick(generalButton);
+                }
+            } else {
+                // Default to general terms if no app parameter
+                const generalButton = document.querySelector(`.app-btn[data-app="general"]`);
+                simulateButtonClick(generalButton);
+            }
+            
+            // Add click event handler to buttons
+            appButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    appButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Hide all terms sections
+                    termsSections.forEach(section => section.classList.remove('active'));
+                    
+                    // Show selected terms section
+                    const app = this.getAttribute('data-app');
+                    let sectionId;
+                    
+                    switch(app) {
+                        case 'general':
+                            sectionId = 'general-terms';
+                            break;
+                        case 'quicknote':
+                            sectionId = 'quicknote-terms';
+                            break;
+                        case 'ace':
+                            sectionId = 'ace-terms';
+                            break;
+                        case 'acesat':
+                            sectionId = 'acesat-terms';
+                            break;
+                        case 'aceact':
+                            sectionId = 'aceact-terms';
+                            break;
+                        case 'bedrot':
+                            sectionId = 'bedrot-terms';
+                            break;
+                        case 'longr':
+                            sectionId = 'longr-terms';
+                            break;
+                        case 'acepsat':
+                            sectionId = 'acepsat-terms';
+                            break;
+                        case 'acepreact':
+                            sectionId = 'acepreact-terms';
+                            break;
+                        case 'faithful':
+                            sectionId = 'faithful-terms';
+                            break;
+                    }
+                    
+                    document.getElementById(sectionId).classList.add('active');
+                    
+                    // Update URL parameter without refreshing
+                    const newUrl = window.location.pathname + `?app=${app}`;
+                    history.pushState({}, '', newUrl);
+                });
+            });
+            
+            function simulateButtonClick(button) {
+                // Remove active class from all buttons
+                appButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Hide all terms sections
+                termsSections.forEach(section => section.classList.remove('active'));
+                
+                // Show selected terms section
+                const app = button.getAttribute('data-app');
+                let sectionId;
+                
+                switch(app) {
+                    case 'general':
+                        sectionId = 'general-terms';
+                        break;
+                    case 'quicknote':
+                        sectionId = 'quicknote-terms';
+                        break;
+                    case 'ace':
+                        sectionId = 'ace-terms';
+                        break;
+                    case 'acesat':
+                        sectionId = 'acesat-terms';
+                        break;
+                    case 'aceact':
+                        sectionId = 'aceact-terms';
+                        break;
+                    case 'bedrot':
+                        sectionId = 'bedrot-terms';
+                        break;
+                    case 'longr':
+                        sectionId = 'longr-terms';
+                        break;
+                    case 'acepsat':
+                        sectionId = 'acepsat-terms';
+                        break;
+                    case 'acepreact':
+                        sectionId = 'acepreact-terms';
+                        break;
+                    case 'faithful':
+                        sectionId = 'faithful-terms';
+                        break;
+                }
+                
+                document.getElementById(sectionId).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

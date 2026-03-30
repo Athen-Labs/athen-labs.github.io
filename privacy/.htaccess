@@ -1,0 +1,44 @@
+RewriteEngine On
+
+# Handle direct model URLs
+RewriteRule ^Model$ index.html?app=audit-model [L,R=302]
+RewriteRule ^Deck$ index.html?app=audit-deck [L,R=302]
+RewriteRule ^Document$ index.html?app=audit-document [L,R=302]
+RewriteRule ^Excel$ index.html?app=excel [L,R=302]
+RewriteRule ^PowerPoint$ index.html?app=powerpoint [L,R=302]
+RewriteRule ^Word$ index.html?app=word [L,R=302]
+RewriteRule ^LinkedIn$ index.html?app=linkedin [L,R=302]
+RewriteRule ^Indeed$ index.html?app=indeed [L,R=302]
+RewriteRule ^Handshake$ index.html?app=handshake [L,R=302]
+RewriteRule ^Hirevue$ index.html?app=hirevue [L,R=302]
+RewriteRule ^QuickNote$ index.html?app=quicknote [L,R=302]
+RewriteRule ^PhotoMagic$ index.html?app=photomagic [L,R=302]
+RewriteRule ^TryOn$ index.html?app=tryon [L,R=302]
+RewriteRule ^AceSAT$ index.html?app=acesat [L,R=302]
+RewriteRule ^AceACT$ index.html?app=aceact [L,R=302]
+RewriteRule ^Faithful$  index.html?app=faithful  [L,R=302]
+
+# Case insensitive versions
+RewriteRule ^model$ index.html?app=audit-model [L,R=302]
+RewriteRule ^deck$ index.html?app=audit-deck [L,R=302]
+RewriteRule ^document$ index.html?app=audit-document [L,R=302]
+RewriteRule ^excel$ index.html?app=excel [L,R=302]
+RewriteRule ^powerpoint$ index.html?app=powerpoint [L,R=302]
+RewriteRule ^word$ index.html?app=word [L,R=302]
+RewriteRule ^linkedin$ index.html?app=linkedin [L,R=302]
+RewriteRule ^indeed$ index.html?app=indeed [L,R=302]
+RewriteRule ^handshake$ index.html?app=handshake [L,R=302]
+RewriteRule ^hirevue$ index.html?app=hirevue [L,R=302]
+RewriteRule ^quicknote$ index.html?app=quicknote [L,R=302]
+RewriteRule ^photomagic$ index.html?app=photomagic [L,R=302]
+RewriteRule ^tryon$ index.html?app=tryon [L,R=302]
+RewriteRule ^acesat$ index.html?app=acesat [L,R=302]
+RewriteRule ^aceact$ index.html?app=aceact [L,R=302]
+RewriteRule ^faithful$  index.html?app=faithful  [L,R=302]
+
+# If the request is for a non-existent file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# And if it matches one of our app names
+RewriteRule ^(Model|Deck|Document|Excel|PowerPoint|Word|LinkedIn|Indeed|Handshake|Hirevue|QuickNote|PhotoMagic|TryOn|AceSAT|AceACT|Faithful)$ $1.html [L] 
