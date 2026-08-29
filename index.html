@@ -1,166 +1,302 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athen Labs | Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Athen Labs provides focused security engineering and authorized research across Web2 and Web3.">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://athenlabs.com/">
+    <meta property="og:title" content="Athen Labs | Security Research and Engineering">
+    <meta property="og:description" content="Focused security engineering and authorized research across Web2 and Web3.">
+    <meta property="og:image" content="https://athenlabs.com/athenlabs.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Athen Labs | Security Research and Engineering">
+    <meta name="twitter:description" content="Focused security engineering and authorized research across Web2 and Web3.">
+    <meta name="twitter:image" content="https://athenlabs.com/athenlabs.png">
+    <title>Athen Labs | Security Research and Engineering</title>
     <link rel="icon" href="athenlabs.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="landing.css">
 </head>
-<body class="main-page smooth-scroll">
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Athen Labs</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#mobile-apps">Consumer Apps</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <main id="main">
         <div class="container">
-            <div class="hero-image">
-                <img src="athenlabs.png" alt="Athen Labs Logo">
-            </div>
-            <div class="hero-content">
-                <h1>Athen Labs</h1>
-                <p>Apps that help you study, take notes for you, and brighten your day</p>
-                <div class="hero-buttons">
-                    <a href="#mobile-apps" class="btn btn-secondary">Consumer Apps</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mobile Apps Section -->
-    <section id="mobile-apps" class="section">
-        <div class="container">
-            <div class="app-cards">
-                <div class="app-card">
-                    <div class="app-image">
-                        <img src="privacy/AceSATLogo.jpg" alt="Ace SAT App Icon" class="app-icon">
-                        <span class="platform-badge ios" data-platform="iOS"></span>
+            <header class="title-block" aria-labelledby="site-title">
+                <div class="title-row">
+                    <div class="title-copy">
+                        <h1 id="site-title">Athen Labs</h1>
+                        <p class="tagline">Applied Security Research</p>
                     </div>
-                    <div class="app-content">
-                        <h3>Ace SAT &amp; Ace ACT</h3>
-                        <p>Test prep apps featuring 1000+ practice questions, adaptive study plans, and AI coaching. The platform tracks student performance in real-time and adjusts difficulty based on strengths and weaknesses.</p>
-                        <div class="app-actions">
-                            <a href="https://getacecoach.com" class="app-btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> See App</a>
-                            <a href="terms/?app=acesat" class="app-btn"><i class="fas fa-file-contract"></i> Terms</a>
-                            <a href="privacy/?app=acesat" class="app-btn"><i class="fas fa-shield-alt"></i> Privacy</a>
+                    <a class="engagement-button" href="mailto:hello@athenlabs.com?subject=Security%20engagement">Start an engagement <span aria-hidden="true">↗</span></a>
+                </div>
+                <p class="lede">Boutique security engineering for software, infrastructure, and protocols, with focused expertise across Web2 and Web3.</p>
+            </header>
+
+            <div class="sections">
+                <section class="section programs" aria-labelledby="programs-title">
+                    <div class="section-heading">
+                        <h2 id="programs-title">Research portfolio</h2>
+                    </div>
+
+                    <div class="program-marquee" role="region" aria-label="Organizations researched through authorized security programs">
+                        <div class="program-track">
+                            <div class="program-group">
+                                <div class="program-mark">
+                                    <img src="https://cdn.simpleicons.org/shopify/111111" alt="" width="24" height="24">
+                                    <span><strong>Shopify</strong><small>Web &amp; API security</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/1d92a039-47b8-4986-627e-e33df2971200/public" alt="" width="24" height="24">
+                                    <span><strong>Ammalgam</strong><small>Smart contracts</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/7b9b34db-25d9-4cd1-34b6-cb169028fe00/public" alt="" width="24" height="24">
+                                    <span><strong>Superform</strong><small>Smart contracts</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/e0c3134f-779c-4570-53eb-8cf80aa7ff00/public" alt="" width="24" height="24">
+                                    <span><strong>Mezo</strong><small>Protocol security</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/faceb1cf-6d27-4718-4623-387405d69000/public" alt="" width="24" height="24">
+                                    <span><strong>Kiln</strong><small>Web &amp; infrastructure</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/395a09a9-3637-47a8-f553-70fe6c889700/public" alt="" width="24" height="24">
+                                    <span><strong>Aave</strong><small>Smart contracts</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://cdn.simpleicons.org/binance/111111" alt="" width="24" height="24">
+                                    <span><strong>Binance</strong><small>Wallet-signing security</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://cdn.simpleicons.org/hubspot/111111" alt="" width="24" height="24">
+                                    <span><strong>HubSpot</strong><small>Application security</small></span>
+                                </div>
+                            </div>
+
+                            <div class="program-group" aria-hidden="true">
+                                <div class="program-mark">
+                                    <img src="https://cdn.simpleicons.org/shopify/111111" alt="" width="24" height="24">
+                                    <span><strong>Shopify</strong><small>Web &amp; API security</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/1d92a039-47b8-4986-627e-e33df2971200/public" alt="" width="24" height="24">
+                                    <span><strong>Ammalgam</strong><small>Smart contracts</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/7b9b34db-25d9-4cd1-34b6-cb169028fe00/public" alt="" width="24" height="24">
+                                    <span><strong>Superform</strong><small>Smart contracts</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/e0c3134f-779c-4570-53eb-8cf80aa7ff00/public" alt="" width="24" height="24">
+                                    <span><strong>Mezo</strong><small>Protocol security</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/faceb1cf-6d27-4718-4623-387405d69000/public" alt="" width="24" height="24">
+                                    <span><strong>Kiln</strong><small>Web &amp; infrastructure</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/395a09a9-3637-47a8-f553-70fe6c889700/public" alt="" width="24" height="24">
+                                    <span><strong>Aave</strong><small>Smart contracts</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://cdn.simpleicons.org/binance/111111" alt="" width="24" height="24">
+                                    <span><strong>Binance</strong><small>Wallet-signing security</small></span>
+                                </div>
+                                <div class="program-mark">
+                                    <img src="https://cdn.simpleicons.org/hubspot/111111" alt="" width="24" height="24">
+                                    <span><strong>HubSpot</strong><small>Application security</small></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="app-card">
-                    <div class="app-image">
-                        <img src="CleanShot 2025-03-15 at 12.16.59@2x.png" alt="QuickNote.AI App Icon" class="app-icon">
-                        <span class="platform-badge ios" data-platform="iOS"></span>
+                </section>
+
+                <section class="section" aria-labelledby="disclosures-title">
+                    <div class="section-heading">
+                        <h2 id="disclosures-title">Recent works</h2>
                     </div>
-                    <div class="app-content">
-                        <h3>QuickNote.AI</h3>
-                        <p>Lecture transcription app that automatically organizes notes by topic and color-codes important concepts. Students record their classes and get clean, structured notes they can search through and export to their favorite apps.</p>
-                        <div class="app-actions">
-                            <a href="https://apps.apple.com/us/app/quicknote-ai/id6670516528" class="app-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"></i> App Store</a>
-                            <a href="terms/?app=quicknote" class="app-btn"><i class="fas fa-file-contract"></i> Terms</a>
-                            <a href="privacy/?app=quicknote" class="app-btn"><i class="fas fa-shield-alt"></i> Privacy</a>
+
+                    <div class="work-list">
+                        <div class="work-item">
+                            <div class="ident">
+                                <img class="row-logo" src="https://cdn.simpleicons.org/shopify/111111" alt="" width="24" height="24">
+                                <span class="ident-label">Shopify</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-main">
+                                    <span class="research-summary">Session integrity failure, weakened credential trust, OAuth boundary crossing, and diverged webhook trust</span>
+                                    <span class="research-rotator rotator-four" aria-hidden="true">
+                                        <span class="research-track">
+                                            <span>Session integrity failure</span>
+                                            <span>Host validation weakened credential trust</span>
+                                            <span>OAuth state crossed session boundaries</span>
+                                            <span>Authentication and webhook trust diverged</span>
+                                            <span>Session integrity failure</span>
+                                            <span>Host validation weakened credential trust</span>
+                                            <span>OAuth state crossed session boundaries</span>
+                                            <span>Authentication and webhook trust diverged</span>
+                                            <span>Session integrity failure</span>
+                                            <span>Host validation weakened credential trust</span>
+                                            <span>OAuth state crossed session boundaries</span>
+                                            <span>Authentication and webhook trust diverged</span>
+                                            <span>Session integrity failure</span>
+                                            <span>Host validation weakened credential trust</span>
+                                            <span>OAuth state crossed session boundaries</span>
+                                            <span>Authentication and webhook trust diverged</span>
+                                            <span>Session integrity failure</span>
+                                            <span>Host validation weakened credential trust</span>
+                                            <span>OAuth state crossed session boundaries</span>
+                                            <span>Authentication and webhook trust diverged</span>
+                                            <span>Session integrity failure</span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="item-org">2026</span>
+                            </div>
+                            <span class="arrow" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="work-item">
+                            <div class="ident">
+                                <img class="row-logo" src="https://cdn.simpleicons.org/hubspot/111111" alt="" width="24" height="24">
+                                <span class="ident-label">HubSpot</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-main">
+                                    <span class="item-title">Object-level authorization bypass</span>
+                                </div>
+                                <span class="item-org">2026</span>
+                            </div>
+                            <span class="arrow" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="work-item">
+                            <div class="ident">
+                                <img class="row-logo" src="https://cdn.simpleicons.org/binance/111111" alt="" width="24" height="24">
+                                <span class="ident-label">Binance</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-main">
+                                    <span class="item-title">Unintended wallet-signing behavior</span>
+                                </div>
+                                <span class="item-org">2026</span>
+                            </div>
+                            <span class="arrow" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="work-item">
+                            <div class="ident">
+                                <img class="row-logo" src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/1d92a039-47b8-4986-627e-e33df2971200/public" alt="" width="24" height="24">
+                                <span class="ident-label">Ammalgam</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-main">
+                                    <span class="research-summary">Unsafe contract state, protocol invariant violation, and inconsistent market accounting</span>
+                                    <span class="research-rotator rotator-three" aria-hidden="true">
+                                        <span class="research-track">
+                                            <span>Contract logic reached an unsafe state</span>
+                                            <span>Protocol invariant violation</span>
+                                            <span>Market accounting produced inconsistent results</span>
+                                            <span>Contract logic reached an unsafe state</span>
+                                            <span>Protocol invariant violation</span>
+                                            <span>Market accounting produced inconsistent results</span>
+                                            <span>Contract logic reached an unsafe state</span>
+                                            <span>Protocol invariant violation</span>
+                                            <span>Market accounting produced inconsistent results</span>
+                                            <span>Contract logic reached an unsafe state</span>
+                                            <span>Protocol invariant violation</span>
+                                            <span>Market accounting produced inconsistent results</span>
+                                            <span>Contract logic reached an unsafe state</span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="item-org">2026</span>
+                            </div>
+                            <span class="arrow" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="work-item">
+                            <div class="ident">
+                                <img class="row-logo" src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/7b9b34db-25d9-4cd1-34b6-cb169028fe00/public" alt="" width="24" height="24">
+                                <span class="ident-label">Superform</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-main">
+                                    <span class="item-title">Contract execution diverged from expectations</span>
+                                </div>
+                                <span class="item-org">2026</span>
+                            </div>
+                            <span class="arrow" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="work-item">
+                            <div class="ident">
+                                <img class="row-logo" src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/e0c3134f-779c-4570-53eb-8cf80aa7ff00/public" alt="" width="24" height="24">
+                                <span class="ident-label">Mezo</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-main">
+                                    <span class="item-title">Protocol trust assumptions failed</span>
+                                </div>
+                                <span class="item-org">2026</span>
+                            </div>
+                            <span class="arrow" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="work-item">
+                            <div class="ident">
+                                <img class="row-logo" src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/faceb1cf-6d27-4718-4623-387405d69000/public" alt="" width="24" height="24">
+                                <span class="ident-label">Kiln</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-main">
+                                    <span class="item-title">Web infrastructure exposed an unsafe trust path</span>
+                                </div>
+                                <span class="item-org">2026</span>
+                            </div>
+                            <span class="arrow" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="work-item">
+                            <div class="ident">
+                                <img class="row-logo" src="https://imagedelivery.net/wtv4_V7VzVsxpAFaxzmpbw/395a09a9-3637-47a8-f553-70fe6c889700/public" alt="" width="24" height="24">
+                                <span class="ident-label">Aave V3</span>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-main">
+                                    <span class="research-summary">Unexpected Aptos contract state and protocol behavior outside expected invariants</span>
+                                    <span class="research-rotator rotator-two" aria-hidden="true">
+                                        <span class="research-track">
+                                            <span>Aptos contract logic reached an unexpected state</span>
+                                            <span>Protocol behavior violated expected invariants</span>
+                                            <span>Aptos contract logic reached an unexpected state</span>
+                                            <span>Protocol behavior violated expected invariants</span>
+                                            <span>Aptos contract logic reached an unexpected state</span>
+                                            <span>Protocol behavior violated expected invariants</span>
+                                            <span>Aptos contract logic reached an unexpected state</span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="item-org">2026</span>
+                            </div>
+                            <span class="arrow" aria-hidden="true"></span>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="app-card">
-                    <div class="app-image">
-                        <img src="faithful.png" alt="Faithful App Icon" class="app-icon">
-                        <span class="platform-badge ios" data-platform="iOS"></span>
-                    </div>
-                    <div class="app-content">
-                        <h3>Faithful</h3>
-                        <p>A daily wallpaper app that generates personalized Christian lock screens overnight. Users wake up to fresh scripture and prayers tailored to their life stage, with customizable colors and typography.</p>
-                        <div class="app-actions">
-                            <a href="https://apps.apple.com/us/app/faithful-christian-wallpapers/id6745802770" class="app-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"></i> App Store</a>
-                            <a href="terms/?app=faithful" class="app-btn"><i class="fas fa-file-contract"></i> Terms</a>
-                            <a href="privacy/?app=faithful" class="app-btn"><i class="fas fa-shield-alt"></i> Privacy</a>
-                        </div>
-                    </div>
-                </div>
-
+                <section class="section contact" aria-labelledby="contact-title">
+                    <h2 id="contact-title">© 2026 Athen Labs, LLC</h2>
+                    <p>Boston-based security research firm helping teams secure applications, infrastructure, and decentralized protocols.</p>
+                    <a href="mailto:hello@athenlabs.com">hello@athenlabs.com <span aria-hidden="true">↗</span></a>
+                </section>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>Athen Labs, LLC</h2>
-                    <p>56 Broad Street, STE 14022<br>Boston, MA 02109<br>United States</p>
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="mailto:hello@athenlabs.com?subject=Contact%20Inquiry">Contact</a></li>
-                        <li><a href="mailto:hello@athenlabs.com?subject=Career%20Inquiry">Careers</a></li>
-                        <li><a href="support">Support</a></li>
-                        <li><a href="terms/?app=general">Terms</a></li>
-                        <li><a href="privacy/?app=general">Privacy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Athen Labs, LLC. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <!-- Add JavaScript for smooth scrolling -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all links that have hash links (internal page navigation)
-            const links = document.querySelectorAll('a[href^="#"]');
-            
-            // Add click event listeners to each link
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Get the target section
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        // Calculate header height - may be different on mobile
-                        const headerHeight = document.querySelector('header').offsetHeight;
-                        
-                        // Additional offset for mobile devices
-                        let offset = headerHeight;
-                        if (window.innerWidth <= 768) {
-                            // Use smaller offset on mobile to ensure the section is visible
-                            offset = headerHeight - 15;
-                        }
-                        
-                        // Smooth scroll to the target section
-                        window.scrollTo({
-                            top: targetSection.offsetTop - offset,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Update URL hash without jumping
-                        history.pushState(null, null, targetId);
-                    }
-                });
-            });
-        });
-    </script>
+    </main>
 </body>
 </html>
